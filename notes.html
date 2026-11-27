@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习笔记 - 【你的名字】的个人主页</title>
+  <meta name="description" content="【你的名字】的学习笔记，记录每天学到的小知识。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="project-name">学习笔记</h1>
+    <p class="project-tagline">学一点，记一点，慢慢就变多了</p>
+
+    <nav class="site-nav">
+      <a href="index.html">关于我</a>
+      <a href="works.html">作品展示</a>
+      <a href="notes.html">学习笔记</a>
+      <a href="contact.html">联系方式</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <h2>我的笔记本</h2>
+    <p>
+      这里记录我在课上、书里、网上学到的东西。
+      可以按学科翻，也可以用下面的搜索框找关键词。
+    </p>
+
+    <!-- 搜索框：输入关键词，下面的笔记会自动筛选（功能写在这个页面底部） -->
+    <div class="search-box">
+      <input id="note-search" type="text" placeholder="输入关键词搜索笔记，例如：方程 / 电路 / 英语时态">
+    </div>
+
+    <!-- ==========================================================
+         笔记列表
+         ----------------------------------------------------------
+         添加一篇新笔记：把下面任意一整段 <article class="note-item">
+         复制一份，粘贴到列表最前面，然后把日期、标题、摘要、正文改成新的。
+         <details> 里的内容默认是折叠的，点一下才展开。
+         ========================================================== -->
+
+    <article class="note-item">
+      <p class="note-date">2026-11-20</p>
+      <h3>数学：一元一次方程怎么解</h3>
+      <p>
+        解方程的核心思路是"等式两边同时做同样的运算"，把未知数一步步孤立出来。
+      </p>
+      <span class="chip">数学</span>
+      <span class="chip">七年级</span>
+      <details>
+        <summary>展开看完整笔记</summary>
+        <p>
+          步骤：① 去分母；② 去括号；③ 移项（移项要变号）；④ 合并同类项；
+          ⑤ 系数化为 1。<br>
+          例子：3x + 5 = 20 → 3x = 15 → x = 5。<br>
+          易错点：移项时忘记变号，或者两边同时除以负数时没有变不等号方向（不等式才需要变）。
+        </p>
+      </details>
+    </article>
+
+    <article class="note-item">
+      <p class="note-date">2026-11-12</p>
+      <h3>语文：读后感的四步写法</h3>
+      <p>
+        读后感不是复述故事，而是"我读到了什么 + 我想到了什么"。
+      </p>
+      <span class="chip">语文</span>
+      <span class="chip">写作</span>
+      <details>
+        <summary>展开看完整笔记</summary>
+        <p>
+          第一步：用两三句话概括书里让你印象最深的情节；<br>
+          第二步：写出你读到那里时的真实感受（惊讶、难过、佩服……）；<br>
+          第三步：联系自己的生活举一个例子；<br>
+          第四步：结尾用一句话总结你学到了什么。
+        </p>
+      </details>
+    </article>
+
+    <article class="note-item">
+      <p class="note-date">2026-11-05</p>
+      <h3>英语：一般现在时和现在进行时的区别</h3>
+      <p>
+        一般现在时说"平时就是这样"，现在进行时说"此刻正在这样"。
+      </p>
+      <span class="chip">英语</span>
+      <span class="chip">语法</span>
+      <details>
+        <summary>展开看完整笔记</summary>
+        <p>
+          一般现在时：主语 + 动词原形（第三人称单数加 s），常和 always、usually、every day 连用。<br>
+          现在进行时：主语 + am/is/are + 动词 ing，常和 now、look、listen 连用。<br>
+          对比例句：I read books every day. / I am reading a book now.
+        </p>
+      </details>
+    </article>
+
+    <article class="note-item">
+      <p class="note-date">2026-10-28</p>
+      <h3>科学：串联电路和并联电路</h3>
+      <p>
+        串联是"一条路走到底"，并联是"分岔再汇合"。
+      </p>
+      <span class="chip">科学</span>
+      <span class="chip">电路</span>
+      <details>
+        <summary>展开看完整笔记</summary>
+        <p>
+          串联电路：电流处处相等，总电压等于各部分电压之和；一个灯泡坏了整条电路都断。<br>
+          并联电路：各支路电压相等，干路电流等于各支路电流之和；一条支路坏了其他支路照常工作。<br>
+          生活例子：家里的电灯大多是并联，所以坏一个不影响别的。
+        </p>
+      </details>
+    </article>
+
+    <article class="note-item">
+      <p class="note-date">2026-10-15</p>
+      <h3>信息科技：HTML 里的标题和段落</h3>
+      <p>
+        网页就是用标签把内容"框"起来，告诉浏览器这是什么。
+      </p>
+      <span class="chip">信息科技</span>
+      <span class="chip">编程</span>
+      <details>
+        <summary>展开看完整笔记</summary>
+        <p>
+          <code>&lt;h1&gt;</code> 到 <code>&lt;h6&gt;</code> 是标题，数字越小标题越大；<br>
+          <code>&lt;p&gt;</code> 是段落；<br>
+          <code>&lt;a href="网址"&gt;文字&lt;/a&gt;</code> 是链接；<br>
+          <code>&lt;img src="图片地址" alt="说明"&gt;</code> 是图片。<br>
+          标签一般成对出现，结尾的标签多一个斜杠，比如 <code>&lt;/p&gt;</code>。
+        </p>
+      </details>
+    </article>
+
+    <p class="empty-tip">没有找到包含这个关键词的笔记，换个词试试吧。</p>
+
+    <h2>写笔记的小习惯</h2>
+    <ul>
+      <li>当天学的当天记，哪怕只写三句话。</li>
+      <li>每篇笔记最后写一句"易错点"，复习时最有用。</li>
+      <li>标题写清楚学科和知识点，方便以后搜索。</li>
+    </ul>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> 【你的名字】 · 用 GitHub Pages 搭建</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品展示 - 【你的名字】的个人主页</title>
+  <meta name="description" content="【你的名字】的作品展示页。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="page-header">
+    <h1 class="project-name">作品展示</h1>
+    <p class="project-tagline">我做过的作业、小项目和小创作都在这里</p>
+
+    <nav class="site-nav">
+      <a href="index.html">关于我</a>
+      <a href="works.html">作品展示</a>
+      <a href="notes.html">学习笔记</a>
+      <a href="contact.html">联系方式</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+
+    <h2>我做过的东西</h2>
+    <p>
+      这里放我的作品，每一个都可以点进去看看。
+      一开始只有几个，以后会越来越多。
+    </p>
+
+    <!-- ==========================================================
+         作品卡片区
+         ----------------------------------------------------------
+         添加一个新作品的方法：把下面任意一整段 <article class="work-card">
+         复制一份，粘贴在 </div> 前面，然后把里面的文字改成你的内容。
+         想放图片：把图片放到 images 文件夹，再把下面的
+             <div class="work-cover">作品图片</div>
+         换成
+             <img src="images/你的图片名.jpg" alt="作品说明" style="width:100%;border-radius:.35rem;margin-bottom:.9rem;">
+         ========================================================== -->
+
+    <div class="card-grid">
+
+      <article class="work-card">
+        <div class="work-cover">作品图片（可替换）</div>
+        <h3>【作品名称一】</h3>
+        <p>【一句话说明这个作品是什么、你做了什么，例如：用 Python 写的猜数字小游戏。】</p>
+        <p>
+          <span class="chip">【分类：编程】</span>
+          <span class="chip">【时间：2026.10】</span>
+        </p>
+        <div class="card-foot">
+          <a href="#">查看作品</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">作品图片（可替换）</div>
+        <h3>【作品名称二】</h3>
+        <p>【一句话说明这个作品，例如：用 Scatch 做的打地鼠游戏。】</p>
+        <p>
+          <span class="chip">【分类：编程】</span>
+          <span class="chip">【时间：2026.09】</span>
+        </p>
+        <div class="card-foot">
+          <a href="#">查看作品</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">作品图片（可替换）</div>
+        <h3>【作品名称三】</h3>
+        <p>【一句话说明这个作品，例如：数学手抄报"生活中的对称图形"。】</p>
+        <p>
+          <span class="chip">【分类：手抄报】</span>
+          <span class="chip">【时间：2026.06】</span>
+        </p>
+        <div class="card-foot">
+          <a href="#">查看作品</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">作品图片（可替换）</div>
+        <h3>【作品名称四】</h3>
+        <p>【一句话说明这个作品，例如：一篇读书笔记《城南旧事》。】</p>
+        <p>
+          <span class="chip">【分类：写作】</span>
+          <span class="chip">【时间：2026.05】</span>
+        </p>
+        <div class="card-foot">
+          <a href="#">查看作品</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">作品图片（可替换）</div>
+        <h3>【作品名称五】</h3>
+        <p>【一句话说明这个作品，例如：英语配音视频。】</p>
+        <p>
+          <span class="chip">【分类：英语】</span>
+          <span class="chip">【时间：2026.04】</span>
+        </p>
+        <div class="card-foot">
+          <a href="#">查看作品</a>
+        </div>
+      </article>
+
+      <article class="work-card">
+        <div class="work-cover">作品图片（可替换）</div>
+        <h3>【作品名称六】</h3>
+        <p>【一句话说明这个作品，例如：给班级设计的黑板报排版。】</p>
+        <p>
+          <span class="chip">【分类：设计】</span>
+          <span class="chip">【时间：2026.03】</span>
+        </p>
+        <div class="card-foot">
+          <a href="#">查看作品</a>
+        </div>
+      </article>
+
+    </div>
+
+    <h2>怎么添加新作品</h2>
+    <ol>
+      <li>用记事本或 VS Code 打开这个 <code>works.html</code> 文件。</li>
+      <li>找到一段 <code>&lt;article class="work-card"&gt; ... &lt;/article&gt;</code>，整段复制。</li>
+      <li>粘贴到最后一张卡片的后面（也就是 <code>&lt;/div&gt;</code> 的前面）。</li>
+      <li>把新卡片里的【】内容改成你的作品信息。</li>
+      <li>保存文件，刷新浏览器就能看到了。</li>
+    </ol>
+
+    <div class="tip">
+      小提醒：作品如果放在别的网站（比如视频链接），把
+      <code>href="#"</code> 里的 <code>#</code> 换成你的网址即可，
+      记得网址要用英文引号括起来。
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> 【你的名字】 · 用 GitHub Pages 搭建</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
