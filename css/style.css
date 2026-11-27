@@ -1,0 +1,348 @@
+/* ============================================================
+   个人主页样式表  style.css
+   ------------------------------------------------------------
+   说明：这个文件负责"长什么样"，一般不用大改。
+   想换主色调，只需要改下面 :root 里的 --brand-start / --brand-end
+   两个颜色值（可以搜"颜色代码"找喜欢的色号，例如 #ff7675）。
+   ============================================================ */
+
+:root {
+  --brand-start: #155799;   /* 渐变起始色（深蓝） */
+  --brand-end:   #159957;   /* 渐变结束色（青绿） */
+  --link:        #1e6bb8;   /* 链接颜色 */
+  --link-hover:  #0b3d6b;
+  --text:        #24292e;   /* 正文颜色 */
+  --text-light:  #5c6770;   /* 次要文字颜色 */
+  --line:        #e4e8eb;   /* 分割线颜色 */
+  --bg:          #ffffff;   /* 内容区背景色 */
+  --chip-bg:     #eef6f2;   /* 小标签背景色 */
+  --page-max:    64rem;     /* 内容区最大宽度 */
+}
+
+/* ---------- 基础重置 ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  background-color: #f7f9fa;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial,
+               "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- 顶部渐变头图（Cayman 风格） ---------- */
+.page-header {
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  color: #fff;
+  background-color: #155799;
+  background-image: linear-gradient(120deg, var(--brand-start), var(--brand-end));
+}
+
+.project-name {
+  margin: 0 0 .6rem;
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.project-tagline {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: 1.05rem;
+  opacity: .92;
+}
+
+/* ---------- 导航 ---------- */
+.site-nav {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .6rem;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: .5rem 1.15rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: .95rem;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 999px;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.site-nav a:hover {
+  background-color: rgba(255, 255, 255, .18);
+  border-color: #fff;
+}
+
+/* 当前所在页面：main.js 会自动加上 active 这个类 */
+.site-nav a.active {
+  background-color: #fff;
+  color: var(--link);
+  border-color: #fff;
+  font-weight: 600;
+}
+
+/* ---------- 内容区 ---------- */
+.main-content {
+  max-width: var(--page-max);
+  margin: -1.5rem auto 3rem;
+  padding: 2.6rem 3rem 3rem;
+  background-color: var(--bg);
+  border-radius: .5rem;
+  box-shadow: 0 6px 24px rgba(20, 40, 60, .10);
+}
+
+.main-content > *:first-child { margin-top: 0 !important; }
+.main-content > *:last-child  { margin-bottom: 0 !important; }
+
+h2 {
+  margin: 2.4rem 0 1rem;
+  padding-bottom: .4rem;
+  font-size: 1.45rem;
+  border-bottom: 1px solid var(--line);
+}
+
+h3 {
+  margin: 1.8rem 0 .6rem;
+  font-size: 1.1rem;
+}
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+
+ul, ol { padding-left: 1.4rem; }
+li { margin: .35rem 0; }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 2rem 0;
+}
+
+code {
+  padding: .1rem .35rem;
+  font-size: .9em;
+  background-color: #f2f4f6;
+  border-radius: .25rem;
+}
+
+/* ---------- 提示框 ---------- */
+.tip {
+  margin: 1.2rem 0;
+  padding: .85rem 1.1rem;
+  font-size: .92rem;
+  color: #2a5d47;
+  background-color: #eef8f2;
+  border-left: 4px solid var(--brand-end);
+  border-radius: .25rem;
+}
+
+/* ---------- 个人信息表 ---------- */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .95rem;
+}
+
+.info-table th,
+.info-table td {
+  padding: .65rem .8rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.info-table th {
+  width: 7.5rem;
+  color: var(--text-light);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ---------- 小标签 ---------- */
+.chip {
+  display: inline-block;
+  margin: 0 .35rem .35rem 0;
+  padding: .15rem .7rem;
+  font-size: .82rem;
+  color: #2a5d47;
+  background-color: var(--chip-bg);
+  border-radius: 999px;
+}
+
+/* ---------- 作品卡片 ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 1.1rem;
+  margin: 1.2rem 0;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-3px);
+  border-color: #b8d8c6;
+  box-shadow: 0 8px 18px rgba(20, 40, 60, .12);
+}
+
+.work-card h3 {
+  margin: 0 0 .4rem;
+  font-size: 1.05rem;
+}
+
+.work-card p {
+  margin: 0 0 .9rem;
+  font-size: .9rem;
+  color: var(--text-light);
+}
+
+.work-card .card-foot {
+  margin-top: auto;
+  font-size: .88rem;
+}
+
+/* 作品封面占位（换成自己的图片时见文件内注释） */
+.work-cover {
+  height: 7rem;
+  margin-bottom: .9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  color: #7c8b94;
+  background-color: #f2f6f8;
+  border-radius: .35rem;
+}
+
+/* ---------- 学习笔记 ---------- */
+.search-box {
+  margin: 1.2rem 0 1.6rem;
+}
+
+.search-box input {
+  width: 100%;
+  padding: .65rem .9rem;
+  font-size: .95rem;
+  font-family: inherit;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: .35rem;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--brand-end);
+  box-shadow: 0 0 0 3px rgba(21, 153, 87, .12);
+}
+
+.note-item {
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand-end);
+  border-radius: .35rem;
+  background-color: #fff;
+}
+
+.note-item .note-date {
+  font-size: .82rem;
+  color: var(--text-light);
+  letter-spacing: .02em;
+}
+
+.note-item h3 {
+  margin: .25rem 0 .5rem;
+  font-size: 1.05rem;
+}
+
+.note-item p { margin-bottom: .5rem; font-size: .92rem; }
+
+.note-item details summary {
+  cursor: pointer;
+  font-size: .88rem;
+  color: var(--link);
+  user-select: none;
+}
+
+.note-item details p {
+  margin-top: .6rem;
+  color: var(--text-light);
+}
+
+.empty-tip {
+  display: none;
+  padding: 1rem;
+  font-size: .9rem;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* ---------- 联系方式 ---------- */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.contact-list li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem 1rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list .label {
+  width: 7rem;
+  flex: none;
+  color: var(--text-light);
+  font-size: .92rem;
+}
+
+/* ---------- 页脚 ---------- */
+.site-footer {
+  max-width: var(--page-max);
+  margin: 0 auto 2.5rem;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: .85rem;
+  color: var(--text-light);
+}
+
+.site-footer a { color: var(--text-light); }
+
+/* ---------- 手机屏幕适配 ---------- */
+@media (max-width: 42rem) {
+  .page-header { padding: 2.5rem 1.2rem 2.2rem; }
+  .project-name { font-size: 1.9rem; }
+  .project-tagline { font-size: .95rem; }
+  .main-content {
+    margin: -1rem .8rem 2rem;
+    padding: 1.6rem 1.2rem 2rem;
+  }
+  h2 { font-size: 1.25rem; }
+  .info-table th { width: 5.5rem; }
+  .contact-list .label { width: 100%; }
+}
